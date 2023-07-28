@@ -5,7 +5,6 @@
  */
 var topKFrequent = function(nums, k) {
     var tracker = {}
-    var res = []
     for (var i = 0; i < nums.length; i++) {
         var stringNum = nums[i].toString()
         if (tracker[stringNum] === undefined) {
@@ -16,7 +15,7 @@ var topKFrequent = function(nums, k) {
     }
     // Sort unique elements based on frequency in descending order
     var sortedKeys = Object.keys(tracker).sort((a, b) => tracker[b] - tracker[a]);
-    
+    console.log(sortedKeys)
     // Return the first k elements from the sorted list
     return sortedKeys.slice(0, k).map(Number);
     
