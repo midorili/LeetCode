@@ -9,28 +9,27 @@ var threeSum = function(nums) {
         if (i > 0 && nums[i] === nums[i-1]) {
             continue;
         }
-        var target = 0 - nums[i];
-        var left = i + 1;
-        var right = nums.length - 1
-        while (right > left) {
-            var sum = nums[left] + nums[right]
+            var target = 0 - nums[i];
+            var left = i + 1;
+            var right = nums.length - 1
+            while (right > left) {
+                var sum = nums[left] + nums[right]
+                if (sum > target) {
+                    right --
+                } else if (sum < target) {
+                    left ++
+                } else {
+                    res.push([nums[i], nums[left], nums[right]])
+                    while (nums[left] === nums[left + 1]) {
+                    left ++
+                    }
+                    while (nums[right] === nums[right + 1]) {
+                    right --
+                    }
+                    left++;
+                    right--;
 
-            if (sum > target) {
-                right --
-            } else if (sum < target) {
-                left ++
-            } else {
-                res.push([nums[i], nums[left], nums[right]])
-            while (nums[left] === nums[left + 1]) {
-            left ++
-        }
-        while (nums[right] === nums[right + 1]) {
-            right --
-        }
-                  left++;
-            right--;
-
-            }
+                }
         }
     
     }
