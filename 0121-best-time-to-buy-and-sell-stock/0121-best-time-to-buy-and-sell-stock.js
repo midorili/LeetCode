@@ -10,7 +10,7 @@ var maxProfit = function(prices) {
     let buy = prices[0];
     let sell = 0;
     
-    for (var i = 0; i < prices.length; i++) {
+    for (var i = 1; i < prices.length; i++) {
        buy = Math.min(buy, prices[i])
        sell = Math.max(sell, prices[i]-buy)
     }
