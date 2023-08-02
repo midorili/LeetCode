@@ -14,11 +14,10 @@ var hasCycle = function(head) {
     if (!head || !head.next) {
         return false;
     }
-    // var slow = this.head.next
-    // var fast = this.head.next.next
+
     var slow = head;
     var fast = head.next;
-    while(slow !== fast) {
+    while (slow !== fast) {
         if (!fast || !fast.next) {
         return false; 
     }
