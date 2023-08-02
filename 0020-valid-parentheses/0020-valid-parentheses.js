@@ -9,7 +9,7 @@ var isValid = function(s) {
         let ch = s[i];
         if (hashMap[ch]) {
             stack.push(hashMap[ch]) 
-        } else if (stack[stack.length-1] === ch ) {
+        } else if (stack[stack.length-1] === ch) {
         stack.pop()
         } else {
             return false;
