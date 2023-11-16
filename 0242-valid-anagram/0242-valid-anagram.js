@@ -4,28 +4,12 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    var arrayOfS = s.split('')
-    // var setS = new Set(arrayOfS)
+    var splitS = s.split('').sort().join('')
+    var splitT = t.split('').sort().join('')
     
-    var arrayOfT = t.split('')
-    // var setT = new Set(arrayOfT)
-    
-//     const eqSet = (setS, setT) =>
-//     setS.size === setT.size && [...setS].every((x) => setT.has(x))
-    
-//     if (eqSet) {
-//         return true
-//     }
-//         return false
-    var sortedS = arrayOfS.sort().join('')
-    var sortedT = arrayOfT.sort().join('')
-    
-    if (sortedS === sortedT) {
+    if (splitS === splitT) {
         return true;
     }
     
-    return false; 
-}
-    
-   
-
+    return false;
+};
